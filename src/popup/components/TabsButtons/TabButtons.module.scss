@@ -1,0 +1,32 @@
+.addBtn {
+	width: 34px;
+    height: 34px;
+	text-align: center;
+	border-radius: 50%;
+	border: 1px solid rgba(255, 255, 255, 0.222);
+	background: var(--bg-color);
+	transition: all ease 0.3s;
+	cursor: pointer;
+}
+
+.addBtn:hover {
+	box-shadow: 0px 0px 20px 1px #ffbb763f;
+	border: 1px solid rgba(255, 255, 255, 0.454);
+}
+
+.confirmBtn {
+	width: 34px;
+    height: 34px;
+	text-align: center;
+	border-radius: 50%;
+	border: 1px solid rgba(255, 255, 255, 0.222);
+	background: var(--bg-color);
+	transition: all ease 0.3s;
+	cursor: pointer;
+}
+
+
+.confirmBtn:hover {
+	box-shadow: 0px 0px 20px 1px #ffbb763f;
+	border: 1px solid rgba(255, 255, 255, 0.454);
+}

@@ -1,0 +1,99 @@
+.favoriteCoins {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	margin: 0 auto;
+	width: 220px;
+	height: 240px;
+	overflow: auto;
+}
+
+.favoriteCoins::-webkit-scrollbar {
+	width: 0px;
+}
+
+.coin {
+	display: flex;
+	position: relative;
+	align-items: center;
+	gap: 25px;
+	width: 210px;
+	height: 50px;
+	padding: 15px 10px;
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.222);
+	transition: all ease 0.3s;
+}
+
+.coin:hover {
+	box-shadow: 0px 0px 20px 1px #ffbb763f;
+	border: 1px solid rgba(255, 255, 255, 0.454);
+}
+
+.img {
+	display: block;
+	width: 32px;
+	height: 32px;
+	border: 50%;
+}
+
+.coinInfo {
+
+}
+
+.name {
+	font-size: 14px;
+}
+
+// .coinPrice {
+// 	display: flex;
+// 	font-size: 14px;
+// 	font-weight: 600;
+// 	color: #a1a7bb;
+// }
+
+.price {
+	font-size: 16px;
+	font-weight: 600;
+	color: #a1a7bb;
+}
+
+.change {
+	position: absolute;
+	text-align: center;
+	top: 24px;
+	right: 15px;
+	font-size: 12px;
+	padding: 2px 4px;
+	border-radius: 8px;
+	background-color: rgb(92, 92, 92);
+}
+
+.positive {
+	background-color: #16c784;
+}
+
+.negative {
+	background-color: #ea3943;	
+}
+
+.deleteBtn {
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	cursor: pointer;
+}
+
+// .crypto {
+// 	display: flex;
+// 	position: relative;
+// 	width: 210px;
+// 	min-height: 50px;
+// 	align-items: center;
+// 	border: 1px solid #fff;
+// 	border-radius: 10px;
+// 	background-color: rgba(65, 65, 65, 0.308);
+// 	border: 1px solid rgba(255, 255, 255, 0.222);
+// 	transition: all ease 0.3s;
+// }
