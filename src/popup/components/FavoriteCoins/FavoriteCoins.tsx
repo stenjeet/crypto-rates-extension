@@ -1,3 +1,4 @@
+import { useCallback, useMemo } from "react";
 import type { Coin } from "../../../types";
 
 import styles from './FavoriteCoins.module.scss'
@@ -12,12 +13,17 @@ interface FavoriteCoinsProps {
  
 const FavoriteCoins: React.FC<FavoriteCoinsProps> = ({coins, favorite, setFavorite}) => {
 
+	const removeFavorite = useCallback((coin: Coin) => {
+		return setFavorite(prev => prev.filter(f => f.id !== coin.id));
+	}, []);
 
-	function removeFavorite(coin: Coin) {
-		setFavorite(favorite.filter(f => f.id !== coin.id))
-	}
+	const favoriteIds = useMemo(() => {
+		return new Set(favorite.map(f => f.id));
+	}, [favorite]);
 
-	const evailableCoins: Coin[] = coins.filter((coins) => favorite.some((f) => f.id == coins.id))
+	const evailableCoins = useMemo(() => {
+		return coins.filter(coin => favoriteIds.has(coin.id))
+	}, [coins, favoriteIds]);
 
 	return (
 		<div className={styles.favoriteCoins}>

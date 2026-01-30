@@ -1,6 +1,7 @@
+import { useCallback, useMemo } from "react";
 import type { Coin } from "../../../types";
 
-import styles from './AllCoins.module.scss'
+import styles from './AllCoins.module.scss';
 
 interface AllCoinsProps {
 	coins: Coin[],
@@ -11,15 +12,30 @@ interface AllCoinsProps {
  
 const AllCoins: React.FC<AllCoinsProps> = ({coins, favorite, setFavorite, value}) => {
 
-	function addFavorite(coin: Coin) {
-		if (!favorite.find(f => f.id === coin.id)) {
-			setFavorite([...favorite, coin])
-		}
-	}
+	const addFavorite = useCallback((coin: Coin) => {
+		setFavorite(prev => 
+			prev.some(f => f.id === coin.id)
+			? prev
+			: [...prev, coin]
+		);
+	}, []);
 
-	const availableCoins: Coin[] = coins.filter(
-		(coin) => !favorite.some((f) => f.id === coin.id)
-	).filter((coin) => coin.name.toLowerCase().includes(value.toLowerCase()))
+
+	const favoriteIds = useMemo(() => {
+		return new Set(favorite.map(f => f.id));
+	}, [favorite]);
+
+
+	const availableCoins = useMemo(() => {
+		const search = value.toLowerCase();
+
+		return coins.filter(
+			coin => !favoriteIds.has(coin.id) &&
+			coin.name.toLowerCase().includes(search)
+		)
+	}, [coins, favoriteIds, value]);
+
+
 
 	
 

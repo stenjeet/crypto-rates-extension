@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import type { Coin } from '../types';
-import '..//styles/App.scss'
+import '..//styles/App.scss';
 
-import Navbar from './components/Navbar/Navbar'
+import Navbar from './components/Navbar/Navbar';
 import AllCoins from './components/AllCoins/AllCoins';
 import TabButtons from './components/TabsButtons/TabsButtons';
 import FavoriteCoins from './components/FavoriteCoins/FavoriteCoins';
