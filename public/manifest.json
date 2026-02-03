@@ -1,11 +1,14 @@
 {
 	"manifest_version": 3,
-    "name": "Cryptocurrency Prices",
+    "name": "Crypto Rates",
     "description": "Easy access to cryptocurrency rates.",
     "version": "1.1.0",
     "action": {
 		"default_title": "Exchange Rates",
-		"default_popup": "index.html"
+		"default_popup": "index.html", 
+		"default_icon" : {
+			"128": "icons/BTC.png"
+		}
 	},
     "permissions": [
 		"scripting",

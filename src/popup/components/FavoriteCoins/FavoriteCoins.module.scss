@@ -17,10 +17,10 @@
 	display: flex;
 	position: relative;
 	align-items: center;
-	gap: 25px;
+	gap: 10px;
 	width: 210px;
 	height: 50px;
-	padding: 15px 10px;
+	padding: 20px 0px;
 	border-radius: 10px;
 	border: 1px solid rgba(255, 255, 255, 0.222);
 	transition: all ease 0.3s;
@@ -36,22 +36,12 @@
 	width: 32px;
 	height: 32px;
 	border: 50%;
-}
-
-.coinInfo {
-
+	margin-left: 10px;
 }
 
 .name {
 	font-size: 14px;
 }
-
-// .coinPrice {
-// 	display: flex;
-// 	font-size: 14px;
-// 	font-weight: 600;
-// 	color: #a1a7bb;
-// }
 
 .price {
 	font-size: 16px;
@@ -84,16 +74,3 @@
 	right: 4px;
 	cursor: pointer;
 }
-
-// .crypto {
-// 	display: flex;
-// 	position: relative;
-// 	width: 210px;
-// 	min-height: 50px;
-// 	align-items: center;
-// 	border: 1px solid #fff;
-// 	border-radius: 10px;
-// 	background-color: rgba(65, 65, 65, 0.308);
-// 	border: 1px solid rgba(255, 255, 255, 0.222);
-// 	transition: all ease 0.3s;
-// }
