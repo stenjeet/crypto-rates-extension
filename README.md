@@ -14,8 +14,8 @@ A Google Chrome extension for quickly viewing current cryptocurrency rates.
 
 ## Screenshots
 
-![Favorites coins](/public/screenshots/favorites.png)
-![All coins](/public/screenshots/all.png)
+<img src="public/screenshots/favorites.png" alt="Favorites coins" width="300">
+<img src="public/screenshots/all.png" alt="All coins" width="300">
 
 
 ## How to Use
