@@ -1,11 +1,25 @@
-const API_KEY: string = 'https://api.coinlore.net/api/tickers/';
+import type { Coin } from '../types.ts';
 
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-	if (message.action == 'fetchData') {
-		fetch(API_KEY)
-			.then(res => res.json())
-			.then(data => sendResponse(data))
-			.catch(error => sendResponse({error: error?.message}))
-		return true;
-	};
-});
+interface TickersResponse {
+	data: Coin[];
+}
+
+interface FetchDataMessage {
+	action: 'fetchData';
+}
+
+type AppMessage = FetchDataMessage;
+
+const API_KEY = 'https://api.coinlore.net/api/tickers/';
+
+chrome.runtime.onMessage.addListener(
+	(message: AppMessage, _sender: chrome.runtime.MessageSender, sendResponse: (response: TickersResponse | { error: string }) => void) => {
+		if (message.action === 'fetchData') {
+			fetch(API_KEY)
+				.then(res => res.json() as Promise<TickersResponse>)
+				.then(data => sendResponse(data))
+				.catch((error: Error) => sendResponse({ error: error?.message }));
+			return true;
+		}
+	},
+);

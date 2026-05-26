@@ -9,7 +9,7 @@ import FavoriteCoins from './components/FavoriteCoins/FavoriteCoins';
 
 
 
-function App() {
+function App(): React.ReactElement {
 
 	const [allCoins, setAllCoins] = useState<Coin[]>([]);
 	const [favorite, setFavorite] = useState<Coin[]>([]);
@@ -31,7 +31,7 @@ function App() {
 		});
 	}, []);
 
-	function ButtonStatus() {
+	function ButtonStatus(): void {
 		setStatus(prev => !prev)
 	};
 
